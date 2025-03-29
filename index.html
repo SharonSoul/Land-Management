@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Land Property Management</title>
+</head>
+<body>
+    <section>
+      <h1 class="title">Land Property Management</h1>
+
+      <form id="form">
+        <div class="status-badge">Status: Initiation</div>
+        
+        <div class="stat-buttons">
+            <button type="button" class="stat-button" id="purchase_order_button">
+                <i class="fas fa-shopping-cart"></i>
+                <div>
+                    <span class="stat-value">0</span>
+                    <span class="stat-text">RFQs</span>
+                </div> 
+            </button>
+            <button type="button" class="stat-button" id="documents_button">
+                <i class="fas fa-file-text"></i>
+                <div>
+                    <span class="stat-value">3</span>
+                    <span class="stat-text">Documents</span>
+                </div>
+            </button>
+        </div>
+        
+        <div class="header-area">
+            <div class="id-section">
+                <label for="land_id">Land Id</label>
+                <input type="text" id="land_id" name="land_id" value="LAND/2025/0001" readonly>
+            </div>
+            <div class="avatar-container">
+                <img id="photo" name="photo" class="avatar" src="/api/placeholder/90/90">
+            </div>
+        </div>
+
+        <!-- Begin Two-Column Layout -->
+        <div class="form-row">
+          <div class="form-column">
+            <div class="input-control">
+              <label for="name">Property Name</label>
+              <input type="text" placeholder="Property Name" id="name" name="name" required />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <div class="input-control">
+              <label for="location_id">Location</label>
+              <select id="location_id" name="location_id" required>
+                <option value="">Select Location</option>
+                <option value="1">Urban</option>
+                <option value="2">Rural</option>
+                <option value="3">Suburban</option>
+              </select>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <div class="input-control">
+              <label for="zoning">Zoning Type</label>
+              <select id="zoning" name="zoning" required>
+                <option value="">Select Zoning Type</option>
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
+                <option value="industrial">Industrial</option>
+                <option value="agricultural">Agricultural</option>
+              </select>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <div class="input-control">
+              <label for="land_type">Land Type</label>
+              <select id="land_type" name="land_type" required>
+                <option value="">Select Land Type</option>
+                <option value="purchase">Purchase</option>
+                <option value="rent">Rent</option>
+              </select>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <div class="input-control">
+              <label for="purchase_price">Purchase Price</label>
+              <input type="number" placeholder="Purchase Price" id="purchase_price" name="purchase_price" min="0" step="0.01" />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+          </div>
+
+          <div class="form-column">
+            <div class="input-control">
+              <label for="land_price">Land Price</label>
+              <input type="number" placeholder="Land Price" id="land_price" name="land_price" min="0" step="0.01" required />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <div class="input-control">
+              <label for="latitude">Latitude</label>
+              <input type="text" placeholder="Latitude" id="latitude" name="latitude" pattern="^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}" />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <div class="input-control">
+              <label for="longitude">Longitude</label>
+              <input type="text" placeholder="Longitude" id="longitude" name="longitude" pattern="^-?([1-9]?[0-9]|1[0-7][0-9]|180)\.{1}\d{1,6}" />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <div class="input-control">
+              <label for="land_size">Land Size (sqm)</label>
+              <input type="number" placeholder="Land Size (sqm)" id="land_size" name="land_size" min="0" step="0.01" required />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <div class="input-control">
+              <label for="seller_id">Seller</label>
+              <select id="seller_id" name="seller_id" required>
+                <option value="">Select Seller</option>
+                <option value="1">John Doe</option>
+                <option value="2">Jane Smith</option>
+                <option value="3">Acme Real Estate</option>
+              </select>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+          </div>
+        </div>
+        <!-- End Two-Column Layout -->
+
+        <div class="input-control">
+          <label for="annual_rent_price">Annual Rent Price</label>
+          <input type="number" placeholder="Annual Rent Price" id="annual_rent_price" name="annual_rent_price" min="0" step="0.01" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+
+        <div class="button-group">
+          <button type="submit">Save</button>
+          <button type="button" id="cancelBtn">Cancel</button>
+        </div>
+      </form>
+
+      <div class="message hidden">
+        <p>Property saved successfully!🎉</p>
+      </div>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
